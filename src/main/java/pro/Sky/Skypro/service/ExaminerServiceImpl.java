@@ -15,21 +15,17 @@ import java.util.*;
 public class ExaminerServiceImpl implements ExaminerService {
     private Random random;
     private final QuestionService javaQuestionService;
-    private final QuestionService mathQuestionService;
 
     @Autowired
-    public ExaminerServiceImpl(@Qualifier("javaQuestions") QuestionService questionService,
-                               @Qualifier("mathQuestions") QuestionService questionService1) {
+    public ExaminerServiceImpl(@Qualifier("javaQuestions") QuestionService questionService) {
         this.javaQuestionService = questionService;
-        this.mathQuestionService = questionService1;
         this.random = new Random();
     }
 
     @Override
     public Collection<Question> getQuestions(int amount) {
         Collection<Question> questionsSetForExam = new HashSet<>();
-        Collection<Question> allQuestions = javaQuestionService.getAll();
-        allQuestions.addAll(mathQuestionService.getAll());
+        Collection<Question> allQuestions = javaQuestionService.getAll();;
         int totalQuestions = allQuestions.size();
         if (amount > totalQuestions) {
             throw new AmountMoreThanQuestionsQuantityException("Запрос превышает фактическое количество содержимого");

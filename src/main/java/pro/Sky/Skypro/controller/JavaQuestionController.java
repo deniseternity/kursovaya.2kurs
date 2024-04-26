@@ -25,7 +25,7 @@ public class JavaQuestionController {
 
     @GetMapping("/remove")
     public Question delete(String question, String answer) {
-        return javaQuestionService.add(question,answer);
+        return javaQuestionService.delete(question,answer);
     }
 
 @GetMapping

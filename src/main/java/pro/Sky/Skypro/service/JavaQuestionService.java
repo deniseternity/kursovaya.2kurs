@@ -1,6 +1,7 @@
 package pro.Sky.Skypro.service;
 
 import org.springframework.stereotype.Service;
+import pro.Sky.Skypro.model.Constans;
 import pro.Sky.Skypro.model.Question;
 
 import java.util.ArrayList;
@@ -21,6 +22,8 @@ return questions.get(randomNumber);
     public Question add(String question, String answer) {
         Question question1 = new Question(question, answer);
         questions.add(question1);
+        for (Question question2 : Constans.allQuestion) {
+        }
         return question1;
     }
 

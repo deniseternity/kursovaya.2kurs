@@ -1,7 +1,4 @@
 package pro.Sky.Skypro;
-
-import com.example.coursework2.questionclass.Question;
-import com.example.coursework2.exceptions.AmountMoreThanQuestionsQuantityException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
