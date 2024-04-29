@@ -12,10 +12,11 @@ import java.util.random.RandomGenerator;
 
 @Service
 public class JavaQuestionService implements QuestionService {
-    List<Question> questions = new ArrayList<>();
+    Random random = new Random();
+    public List<Question> questions = new ArrayList<>();
 
     public Question getRandomQuestion(int maxCount){
-int randomNumber = new Random().nextInt(0 , maxCount);
+int randomNumber = random.nextInt(0 , maxCount);
 return questions.get(randomNumber);
     }
 
