@@ -17,7 +17,7 @@ public class ExaminerServiceImpl implements ExaminerService {
     private final QuestionService javaQuestionService;
 
     @Autowired
-    public ExaminerServiceImpl(@Qualifier("javaQuestions") QuestionService questionService) {
+    public ExaminerServiceImpl(QuestionService questionService) {
         this.javaQuestionService = questionService;
         this.random = new Random();
     }

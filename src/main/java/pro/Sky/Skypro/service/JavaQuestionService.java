@@ -21,9 +21,10 @@ return questions.get(randomNumber);
 
     public Question add(String question, String answer) {
         Question question1 = new Question(question, answer);
-        questions.add(question1);
-        for (Question question2 : Constans.allQuestion) {
+        if (questions.contains(question1)) {
+            throw new RuntimeException();
         }
+        questions.add(question1);
         return question1;
     }
 
